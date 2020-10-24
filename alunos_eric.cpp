@@ -36,20 +36,22 @@ int main ()
 		fflush(stdin);
 		fgets(alunos[i].nome, 50, stdin);
 		
+		nota1: 
 		printf ("Digite a primeira nota: ");
 		scanf ("%f", &alunos[i].nota1);
 		if (alunos[i].nota1 > 10)                                        //Checa se a nota do aluno está dentro dos padrões permitidos
 		{
-			printf ("ERRO! Notas aceitas somente de 1 a 10");
-			break;
+			printf ("ERRO! Notas aceitas somente de 1 a 10\n");
+			goto nota1;
 		}
 		
+		nota2:
 		printf ("Digite a segunda nota: ");								//Checa se a nota do aluno está dentro dos padrões permitidos
 		scanf ("%f", &alunos[i].nota2); 
 		if (alunos[i].nota2 > 10)                                       
 		{
-			printf ("ERRO! Notas aceitas somente de 1 a 10");
-			break;
+			printf ("ERRO! Notas aceitas somente de 1 a 10\n");
+			goto nota2;
 		}
 		
 		alunos[i].media = (alunos[i].nota1 + alunos[i].nota2)/2;
